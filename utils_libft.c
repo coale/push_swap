@@ -3,30 +3,24 @@
 int	ft_atoi(char *str)
 {
 	int	i;
-	int	minus_count;
+	int	sign;
 	int	num;
 
 	i = 0;
 	num = 0;
-	minus_count = 0;
+	sign = 1;
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-	{
 		i++;
-	}
+	if (str[i] == '-')
+			sign = -1;
 	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			minus_count += 1;
 		i++;
-	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		num = num * 10 + str[i] - '0';
 		i++;
 	}
-	if (minus_count % 2 != 0)
-		num = -num;
-	return (num);
+	return (num * sign);
 }
 
 static int	ft_wordcount(char *str, char c)

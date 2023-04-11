@@ -12,6 +12,6 @@ int check_many_args(int argc);
 char **arr_args(int argc, char **argv);
 int is_digit(char *str);
 int *convert(char **temp);
-int check_zeros(char **temp, int *int_arr);
+int check_zeros(char **temp, int *int_arr, int argc);
 
 #endif

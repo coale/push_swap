@@ -54,7 +54,7 @@ int *convert(char **temp)
     return (int_arr);
 }
 
-int check_zeros(char **temp, int *int_arr)
+int check_zeros(char **temp, int *int_arr, int argc)
 {
     int i;
     int j;
@@ -62,7 +62,7 @@ int check_zeros(char **temp, int *int_arr)
 
     i = -1;
     count_sign = 0;
-    while (++i < ft_strlen(*temp))
+    while (++i < (argc - 1))
     {
         j = 0;
         if (int_arr[i] == 0)
