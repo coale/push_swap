@@ -18,14 +18,14 @@ char **arr_args(int argc, char **argv)
 
     i = 1;
     j = 0;
-    temp = malloc(sizeof (argv) * argc); //free() puntatore
+    temp = malloc(sizeof (*argv) * argc); //free() puntatore
     if (check_many_args(argc) == 1)
         temp = ft_split(argv[1], 32);
     else if (check_many_args(argc) == 0)
     {
         while (i < argc)
         {
-            temp[i - 1] =  malloc(sizeof (char) * (ft_strlen(argv[i]) + 1)); //free() ogni elemento
+            temp[i - 1] =  malloc(sizeof (int) * (ft_strlen(argv[i]) + 1)); //free() ogni elemento
             while(argv[i][j])
             {
                 temp[i - 1][j] = argv[i][j];
@@ -39,18 +39,19 @@ char **arr_args(int argc, char **argv)
     return (temp);
 }
 
-int *convert(char **temp)
+int *convert(char **temp, int argc, int *size_arr)
 {
     int i;
     int *int_arr;
 
     i = 0;
-    int_arr = malloc(sizeof (int) * ft_strlen(*temp)); //free()
-    while (i < ft_strlen(*temp))
+    int_arr = malloc(sizeof (int) * argc); //free()
+    while (temp[i])
     {
         int_arr[i] = ft_atoi(temp[i]);
         i++;
     }
+    *size_arr = i;
     return (int_arr);
 }
 
@@ -69,17 +70,33 @@ int check_zeros(char **temp, int *int_arr, int argc)
         {
             while (temp[i][j])
             {
-                if (is_digit(temp[i]) == 1)
+                if (is_digit_and_sign(temp[i]) == 1)
                     return (1);
-                else if (temp[i][j] == '-' || temp[i][j] == '+')
-                {
-                    if (count_sign != 0)
-                        return (1);
-                    count_sign += 1;
-                }
                 j++;
             }
         }
     }
     return (0);
 }
+
+int check_doubles(int *int_arr, int size_arr)
+{
+    int i;
+    int j;
+
+    i = 0;
+    j = 1;
+    while (i < size_arr)
+    {
+        while (j < size_arr)
+        {
+            if (int_arr[i] == int_arr[j])
+                return (1);
+            j++;
+        }
+        i++;
+        j = i + 1;
+    }
+    return (0);
+}
+
