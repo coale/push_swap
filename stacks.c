@@ -1,28 +1,10 @@
 #include "push_swap.h"
 
-//adattare per doubly linked list
-void	ft_lstadd_back(t_node **lst, t_node *new)
+t_list *list_new(int value)
 {
-	t_node	*temp;
+    t_list *node;
 
-	if (!lst || !new)
-		return ;
-	if (!(*lst))
-		*lst = new;
-	else
-	{
-		temp = *lst;
-		while (temp->next)
-			temp = temp->next;
-		temp->next = new;
-	}
-}
-
-t_node *list_new(int value)
-{
-    t_node *node;
-
-    node = malloc(sizeof(t_node));
+    node = malloc(sizeof(t_list));
     if (node == NULL)
 		  return (1);
     node->data = value;
@@ -30,9 +12,9 @@ t_node *list_new(int value)
     return (node);
 }
 
-int	ft_list_size(t_node *head)
+int	ft_list_size(t_list *head)
 {
-  t_node *temp;
+  t_list *temp;
   int size;
 
   *temp = *head;

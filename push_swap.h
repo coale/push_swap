@@ -5,10 +5,10 @@
 #include <stdlib.h>
 #include <stddef.h>
 
-typedef struct s_node {
+typedef struct s_list {
   int data;
-  struct s_node *next;
-}  t_node;
+  struct s_list *next;
+}  t_list;
 
 int	ft_atoi(char *str);
 char	**ft_split(char const *str, char c);
@@ -20,5 +20,6 @@ int *convert(char **temp, int argc, int *size_arr);
 int check_zeros(char **temp, int *int_arr, int argc);
 int check_doubles(int *int_arr, int size_arr);
 int final_check(int *int_arr, char **temp, int size_arr, int argc);
+void	ft_lstadd_back(t_list **lst, t_list *new);
 
 #endif
