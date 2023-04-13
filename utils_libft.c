@@ -133,6 +133,18 @@ int ft_strlen(char *str)
 	return (i);
 }
 
+t_list	*ft_lstnew(void *content)
+{
+	t_list *new_node;
+
+	new_node = (t_list *)malloc(sizeof(t_list));
+	if (!new_node)
+		return (new_node = NULL);
+	new_node->next = NULL;
+	new_node->data = content;
+	return (new_node);
+}
+
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (!lst || !new)
