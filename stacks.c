@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-t_list *fill_list(int *int_arr, int count, int size_arr)
+t_list *fill_list(int *int_arr, int size_arr)
 {
   t_list *lst;
   t_list *temp;

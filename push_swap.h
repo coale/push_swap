@@ -22,5 +22,6 @@ int check_doubles(int *int_arr, int size_arr);
 int final_check(int *int_arr, char **temp, int size_arr, int argc);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 t_list	*ft_lstnew(void *content);
+t_list *fill_list(int *int_arr, int size_arr);
 
 #endif
