@@ -5,7 +5,7 @@ int main(int argc, char **argv)
     int size_arr; //parametro di convert()
     char **temp;
     int *arr;
-    t_list *stack_a;
+    t_list **stack_a;
 
     if (argc > 1)
     {
