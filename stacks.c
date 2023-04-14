@@ -8,6 +8,7 @@ t_list *fill_list(int *int_arr, int size_arr)
 
   i = 0;
   head = NULL;
+  head = (t_list *) malloc(sizeof(t_list));
   while (i < size_arr)
   {
     temp = ft_lstnew(int_arr);
