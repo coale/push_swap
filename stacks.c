@@ -11,10 +11,9 @@ t_list *fill_list(int *int_arr, int size_arr)
   head = (t_list *) malloc(sizeof(t_list));
   while (i < size_arr)
   {
-    temp = ft_lstnew(int_arr);
+    temp = ft_lstnew(int_arr[i]);
     ft_lstadd_back(head, temp);
     i++;
-    int_arr++;
   }
   return (head);
 }
