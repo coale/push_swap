@@ -133,7 +133,7 @@ int ft_strlen(char *str)
 	return (i);
 }
 
-//modificato parametro
+//modificato parametri e funzione
 t_list	*ft_lstnew(int content, int index)
 {
 	t_list *new_node;
