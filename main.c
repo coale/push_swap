@@ -5,7 +5,8 @@ int main(int argc, char **argv)
     int size_arr; //parametro di convert()
     char **temp;
     int *arr;
-    t_list **stack_a;
+    t_list *head;
+    t_list *stack_aPtr;
 
     if (argc > 1)
     {
@@ -13,9 +14,15 @@ int main(int argc, char **argv)
         arr = convert(temp, argc, &size_arr);
         if (final_check(arr, temp, size_arr, argc) == 0)
         {
-            stack_a = fill_list(arr, size_arr);
+            head = fill_list(arr, size_arr);
+            stack_aPtr = head;
+            while(stack_aPtr->next)
+            {
+                printf("%d\n", stack_aPtr->data);
+                stack_aPtr = stack_aPtr->next;
+            }
+            printf("%d\n", stack_aPtr->data);
         }
-        printf("%d\n", check_doubles(arr, size_arr));
     }
     else
         return (1);
