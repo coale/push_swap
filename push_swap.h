@@ -22,8 +22,10 @@ int check_zeros(char **temp, int *int_arr, int argc);
 int check_doubles(int *int_arr, int size_arr);
 int final_check(int *int_arr, char **temp, int size_arr, int argc);
 void	ft_lstadd_back(t_list **lst, t_list *new);
-t_list	*ft_lstnew(int content, int index);
+t_list	*ft_lstnew(int content);
 t_list *fill_list(int *int_arr, int size_arr);
-void sor_list(t_list *head)
+void sort_list(t_list *head);
+void bubbleSort(t_list** head, int count);
+t_list *swap(t_list *ptr1, t_list *ptr2);
 
 #endif

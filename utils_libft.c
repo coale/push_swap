@@ -133,8 +133,8 @@ int ft_strlen(char *str)
 	return (i);
 }
 
-//modificato parametri e funzione
-t_list	*ft_lstnew(int content, int index)
+//modificato
+t_list	*ft_lstnew(int content)
 {
 	t_list *new_node;
 
@@ -142,7 +142,7 @@ t_list	*ft_lstnew(int content, int index)
 	if (!new_node)
 		return (new_node = NULL);
 	new_node->next = NULL;
-	new_node->index = index;
+	new_node->index = 0;
 	new_node->data = content;
 	return (new_node);
 }

@@ -16,13 +16,12 @@ int main(int argc, char **argv)
         {
             head = fill_list(arr, size_arr);
             stack_aPtr = head;
-            //sort_list(head);
-            while (stack_aPtr->next)
+            bubbleSort(&stack_aPtr, size_arr);
+            while (stack_aPtr)
             {
                 printf("%d\n", stack_aPtr->data);
                 stack_aPtr = stack_aPtr->next;
             }
-            printf("%d\n", stack_aPtr->data);
         }
     }
     else
