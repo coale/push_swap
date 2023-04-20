@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   bubble_sort.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aconta <aconta@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/20 14:05:19 by aconta            #+#    #+#             */
+/*   Updated: 2023/04/20 14:05:24 by aconta           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 // C program to implement Bubble Sort on singly linked list
@@ -26,7 +38,7 @@ void bubbleSort(t_list** head, int count)
     {
         h = head;
         swapped = 0;
-        while (j < (count - i - 1))
+        while (j < count - 1)
         {
             t_list* p1 = *h;
             t_list* p2 = p1->next;
@@ -40,6 +52,7 @@ void bubbleSort(t_list** head, int count)
         }
         if (swapped == 0)
             break;
+        j = 0;
         i++;
     }
 }

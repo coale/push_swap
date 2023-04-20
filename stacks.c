@@ -1,3 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stacks.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aconta <aconta@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/20 14:06:19 by aconta            #+#    #+#             */
+/*   Updated: 2023/04/20 15:59:05 by aconta           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include "push_swap.h"
 
 t_list *fill_list(int *int_arr, int size_arr)
@@ -20,31 +33,7 @@ t_list *fill_list(int *int_arr, int size_arr)
   return (head);
 }
 
-
-//ordina la lista senza usare le mosse
-void sort_list(t_list *head)
-    {
-    t_list *node;
-    t_list *temp;
-    int tempvar; //temp variable to store node data
-
-    node = NULL;
-    temp = NULL;
-    node = head;
-    //temp = node;//temp node to hold node data and next link
-    while(node != NULL)
-    {
-        temp = node; 
-        while (temp->next !=NULL)//travel till the second last element 
-        {
-           if(temp->data > temp->next->data)// compare the data of the nodes
-            {
-              tempvar = temp->data;
-              temp->data = temp->next->data;// swap the data
-              temp->next->data = tempvar;
-            }
-         temp = temp->next;    // move to the next element
-        }
-        node = node->next;    // move to the next node
-    }
+void fill_index(t_list **head, int size_arr)
+{
+  
 }

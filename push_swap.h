@@ -1,3 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aconta <aconta@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/20 14:06:07 by aconta            #+#    #+#             */
+/*   Updated: 2023/04/20 14:06:08 by aconta           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -24,7 +37,6 @@ int final_check(int *int_arr, char **temp, int size_arr, int argc);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 t_list	*ft_lstnew(int content);
 t_list *fill_list(int *int_arr, int size_arr);
-void sort_list(t_list *head);
 void bubbleSort(t_list** head, int count);
 t_list *swap(t_list *ptr1, t_list *ptr2);
 
