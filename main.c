@@ -6,7 +6,7 @@
 /*   By: aconta <aconta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:05:59 by aconta            #+#    #+#             */
-/*   Updated: 2023/04/20 14:13:28 by aconta           ###   ########.fr       */
+/*   Updated: 2023/04/21 12:29:14 by aconta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@ int main(int argc, char **argv)
     int *arr;
     t_list *head;
     t_list *stack_aPtr;
-    int i;
 
-    i = 0;
     if (argc > 1)
     {
         temp = arr_args(argc, argv);
@@ -31,12 +29,11 @@ int main(int argc, char **argv)
             head = fill_list(arr, size_arr);
             stack_aPtr = head;
             bubbleSort(&stack_aPtr, size_arr);
+            fill_index(&stack_aPtr, size_arr);
             while (stack_aPtr)
             {
-                stack_aPtr->index = i;
                 printf("Value: %d Index: %d\n", stack_aPtr->data, stack_aPtr->index);
                 stack_aPtr = stack_aPtr->next;
-                i++;
             }
         }
     }

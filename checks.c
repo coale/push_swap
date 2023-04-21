@@ -6,7 +6,7 @@
 /*   By: aconta <aconta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:05:34 by aconta            #+#    #+#             */
-/*   Updated: 2023/04/20 14:05:37 by aconta           ###   ########.fr       */
+/*   Updated: 2023/04/21 12:15:24 by aconta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,10 +71,8 @@ int check_zeros(char **temp, int *int_arr, int argc)
 {
     int i;
     int j;
-    int count_sign;
 
     i = -1;
-    count_sign = 0;
     while (++i < (argc - 1))
     {
         j = 0;
