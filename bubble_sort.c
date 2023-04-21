@@ -6,14 +6,11 @@
 /*   By: aconta <aconta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:05:19 by aconta            #+#    #+#             */
-/*   Updated: 2023/04/21 11:47:15 by aconta           ###   ########.fr       */
+/*   Updated: 2023/04/21 14:30:31 by aconta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-
-/* function to swap data of two nodes a and b*/
 
 t_list *swap(t_list *ptr1, t_list *ptr2)
 {
@@ -23,7 +20,6 @@ t_list *swap(t_list *ptr1, t_list *ptr2)
     return ptr2;
 }
 
-/* Bubble sort the given linked list */
 void bubbleSort(t_list **head, int count)
 {
     t_list **h;

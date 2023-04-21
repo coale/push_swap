@@ -6,7 +6,7 @@
 /*   By: aconta <aconta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:06:07 by aconta            #+#    #+#             */
-/*   Updated: 2023/04/21 12:27:05 by aconta           ###   ########.fr       */
+/*   Updated: 2023/04/21 15:11:54 by aconta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,6 @@ t_list *fill_list(int *int_arr, int size_arr);
 void bubbleSort(t_list** head, int count);
 t_list *swap(t_list *ptr1, t_list *ptr2);
 void fill_index(t_list **head, int size_arr);
+int *ft_search_index(int *int_arr, int arr_size, t_list *head);
 
 #endif
