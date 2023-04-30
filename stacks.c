@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stacks.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aconta <aconta@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aconta <aconta@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:06:19 by aconta            #+#    #+#             */
-/*   Updated: 2023/04/21 12:44:40 by aconta           ###   ########.fr       */
+/*   Updated: 2023/04/30 17:27:25 by aconta       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,17 +33,54 @@ t_list *fill_list(int *int_arr, int size_arr)
   return (head);
 }
 
-void fill_index(t_list **head, int size_arr)
+t_list	*get_min_for_index(t_list **head)
 {
-  t_list *headPtr;
-  int i;
+	t_list	*tmp;
+	t_list	*min;
+    int		flag;
 
-  headPtr = *head;
-  i = 0;
-  while (i < size_arr)
-  {
-    headPtr->index = i;
-    headPtr = headPtr->next;
-    i++;
-  }
+	tmp = *head;
+	min = NULL;
+    flag = 0;
+	if (!tmp)
+		return (NULL);
+	while (tmp)
+	{
+		if ((tmp->index == -1) && (!flag || tmp->data < min->data))
+        {
+            flag = 1;
+			min = tmp;
+        }
+		tmp = tmp->next;
+	}
+	return (min);
+}
+
+void	fill_index(t_list **head)
+{
+	t_list	*tmp;
+	int		i;
+
+	i = 0;
+	tmp = get_min(head);
+	while (tmp)
+	{
+		tmp->index = i;
+		tmp = get_min(head);
+        i++;
+	}
+}
+
+int	is_sorted(t_list **head)
+{
+	t_list	*tmp;
+
+	tmp = *head;
+	while (tmp && tmp->next)
+	{
+		if (tmp->data > tmp->next->data)
+			return (0);
+		tmp = tmp->next;
+	}
+	return (1);
 }

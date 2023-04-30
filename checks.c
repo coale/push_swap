@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checks.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aconta <aconta@student.42.fr>              +#+  +:+       +#+        */
+/*   By: alessandra <alessandra@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:05:34 by aconta            #+#    #+#             */
-/*   Updated: 2023/04/21 14:30:45 by aconta           ###   ########.fr       */
+/*   Updated: 2023/04/30 18:21:03 by alessandra       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ char **arr_args(int argc, char **argv)
 
     i = 1;
     j = 0;
-    temp = malloc(sizeof (*argv) * argc); //free() puntatore
+    temp = malloc(sizeof (*argv) * argc);
     if (check_many_args(argc) == 1)
         temp = ft_split(argv[1], 32);
     else if (check_many_args(argc) == 0)
     {
         while (i < argc)
         {
-            temp[i - 1] =  malloc(sizeof (int) * (ft_strlen(argv[i]) + 1)); //free() ogni elemento
+            temp[i - 1] =  malloc(sizeof (int) * (ft_strlen(argv[i]) + 1));
             while(argv[i][j])
             {
                 temp[i - 1][j] = argv[i][j];

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aconta <aconta@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aconta <aconta@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:05:59 by aconta            #+#    #+#             */
-/*   Updated: 2023/04/21 15:26:53 by aconta           ###   ########.fr       */
+/*   Updated: 2023/04/30 17:19:00 by aconta       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,13 @@ int main(int argc, char **argv)
         arr = convert(temp, argc, &size_arr);
         if (final_check(arr, temp, size_arr, argc) == 0)
         {
+            ft_free_str(**temp);
             head = fill_list(arr, size_arr);
             stack_aPtr = head;
-            bubbleSort(&stack_aPtr, size_arr);
-            fill_index(&stack_aPtr, size_arr);
-            index_arr = ft_search_index(arr, size_arr, head);
+            fill_index(&stack_aPtr);
             while (stack_aPtr)
             {
-                printf("Value: %d Index: %d\n", stack_aPtr->data, index_arr[i]);
+                printf("Value: %d Index: %d\n", stack_aPtr->data, stack_aPtr->index);
                 stack_aPtr = stack_aPtr->next;
                 i++;
             }

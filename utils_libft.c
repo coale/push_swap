@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_libft.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aconta <aconta@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aconta <aconta@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:06:31 by aconta            #+#    #+#             */
-/*   Updated: 2023/04/21 09:27:07 by aconta           ###   ########.fr       */
+/*   Updated: 2023/04/30 17:24:56 by aconta       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,7 +155,7 @@ t_list	*ft_lstnew(int content)
 	if (!new_node)
 		return (new_node = NULL);
 	new_node->next = NULL;
-	new_node->index = 0;
+	new_node->index = -1;
 	new_node->data = content;
 	return (new_node);
 }
@@ -196,4 +196,13 @@ t_list	*ft_lstlast(t_list *lst)
 		lst = lst->next;
 	}
 	return (lst);
+}
+
+// forse nuovo
+t_list *swap_nodes(t_list *ptr1, t_list *ptr2)
+{
+    t_list *tmp = ptr2->next;
+    ptr2->next = ptr1;
+    ptr1->next = tmp;
+    return ptr2;
 }
