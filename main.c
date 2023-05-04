@@ -44,3 +44,30 @@ int main(int argc, char **argv)
     else
         return (1);
 }
+
+
+/*
+int	main(int ac, char **av)
+{
+	t_list	**stack_a;
+	t_list	**stack_b;
+
+	if (ac < 2)
+		return (-1);
+	check_args(ac, av);
+	stack_a = (t_list **)malloc(sizeof(t_list));
+	stack_b = (t_list **)malloc(sizeof(t_list));
+	*stack_a = NULL;
+	*stack_b = NULL;
+	init(stack_a, ac, av);
+	if (is_sorted(stack_a))
+	{
+		free_stack(stack_a);
+		free_stack(stack_b);
+		return (0);
+	}
+	sort(stack_a, stack_b);
+	free_stack(stack_a);
+	free_stack(stack_b);
+	return (0);
+}*/
