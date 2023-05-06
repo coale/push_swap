@@ -6,7 +6,7 @@
 /*   By: aconta <aconta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:05:34 by aconta            #+#    #+#             */
-/*   Updated: 2023/05/04 14:04:52 by aconta           ###   ########.fr       */
+/*   Updated: 2023/05/06 16:42:07 by aconta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,10 @@ int check_zeros(char **temp, int *int_arr, int argc)
             while (temp[i][j])
             {
                 if (is_digit_and_sign(temp[i]) == 1)
+                {
+                    ft_putendl_fd("Error", 2);
                     return (1);
+                }
                 j++;
             }
         }
@@ -101,7 +104,10 @@ int check_doubles(int *int_arr, int size_arr)
         while (j < size_arr)
         {
             if (int_arr[i] == int_arr[j])
+            {
+                ft_putendl_fd("Error", 2);
                 return (1);
+            }
             j++;
         }
         i++;

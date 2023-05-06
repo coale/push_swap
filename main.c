@@ -6,7 +6,7 @@
 /*   By: aconta <aconta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:05:59 by aconta            #+#    #+#             */
-/*   Updated: 2023/05/06 15:08:27 by aconta           ###   ########.fr       */
+/*   Updated: 2023/05/06 16:20:12 by aconta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,9 @@ int main(int argc, char **argv)
 	        *stack_b = NULL;
             ft_free_strarr(temp);
             *stack_a = fill_list(arr, size_arr);
+            free(arr);
+            fill_index(stack_a);
             stack_aPtr = *stack_a;
-            fill_index(&stack_aPtr);
             if (is_sorted(stack_a))
 	        {
 		        free_stack(stack_a);
@@ -45,15 +46,15 @@ int main(int argc, char **argv)
 		        return (0);
 	        }
             sort(stack_a, stack_b);
-	        //free_stack(stack_a);
-	        //free_stack(stack_b);
-	        //return (0);
             while (stack_aPtr)
             {
                 printf("Value: %d Index: %d\n", stack_aPtr->data, stack_aPtr->index);
                 stack_aPtr = stack_aPtr->next;
                 i++;
             }
+	        free_stack(stack_a);
+	        free_stack(stack_b);
+	        //return (0);
         }
     }
     else

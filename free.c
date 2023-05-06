@@ -6,7 +6,7 @@
 /*   By: aconta <aconta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:05:10 by aconta            #+#    #+#             */
-/*   Updated: 2023/05/06 11:12:16 by aconta           ###   ########.fr       */
+/*   Updated: 2023/05/06 15:35:31 by aconta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	ft_free_strarr(char **str)
 		i++;
 	while (i >= 0)
 		free(str[i--]);
+	free(str);
 }
 
 void	free_stack(t_list **head)

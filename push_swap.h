@@ -17,6 +17,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stddef.h>
+#include <unistd.h>
 
 typedef struct s_list {
   int data;
@@ -56,5 +57,6 @@ int	reverserotate(t_list **stack);
 void	free_stack(t_list **head);
 void	sort(t_list **stack_a, t_list **stack_b);
 void	simple_sort(t_list **stack_a, t_list **stack_b);
+void	ft_putendl_fd(char *s, int fd);
 
 #endif
