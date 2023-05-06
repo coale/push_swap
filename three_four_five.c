@@ -6,13 +6,13 @@
 /*   By: aconta <aconta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:06:03 by aconta            #+#    #+#             */
-/*   Updated: 2023/05/04 14:06:05 by aconta           ###   ########.fr       */
+/*   Updated: 2023/05/06 10:20:56 by aconta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	get_min(t_list **stack)
+int	get_min(t_list **stack)
 {
 	t_list	*tmp;
 	int		min;

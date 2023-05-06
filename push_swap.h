@@ -38,9 +38,20 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 t_list	*ft_lstnew(int content);
 t_list *fill_list(int *int_arr, int size_arr);
 void bubbleSort(t_list** head, int count);
-t_list *swap(t_list *ptr1, t_list *ptr2);
+int	swap(t_list **stack);
 void fill_index(t_list **head);
 int *ft_search_index(int *int_arr, int arr_size, t_list *head);
 void	ft_free_str(char **str);
+t_list	*ft_lstlast(t_list *lst);
+int	ft_lstsize(t_list *lst);
+int	rotate(t_list **head);
+int	ra(t_list **stack_a);
+int	pa(t_list **stack_a, t_list **stack_b);
+int	pb(t_list **stack_a, t_list **stack_b);
+int	is_sorted(t_list **head);
+int	rra(t_list **stack_a);
+int	get_min(t_list **stack);
+int	sa(t_list **stack_a);
+int	reverserotate(t_list **stack);
 
 #endif

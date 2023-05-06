@@ -6,7 +6,7 @@
 /*   By: aconta <aconta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:05:24 by aconta            #+#    #+#             */
-/*   Updated: 2023/05/04 14:05:27 by aconta           ###   ########.fr       */
+/*   Updated: 2023/05/06 10:44:51 by aconta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,12 @@ int	rotate(t_list **head)
 	return (0);
 }
 
-void	ra(t_list **stack_a)
+int	ra(t_list **stack_a)
 {
 	if (rotate(stack_a) == -1)
 		return (-1);
 	printf("ra");
+	return (0);
 }
 
 int	push(t_list **dest, t_list **source)
@@ -61,17 +62,77 @@ int	push(t_list **dest, t_list **source)
 	return (0);
 }
 
-void	pa(t_list **stack_a, t_list **stack_b)
+int	pa(t_list **stack_a, t_list **stack_b)
 {
 	if (push(stack_a, stack_b) == -1)
 		return (-1);
 	printf("pa");
-
+	return (0);
 }
 
-void	pb(t_list **stack_a, t_list **stack_b)
+int	pb(t_list **stack_a, t_list **stack_b)
 {
 	if (push(stack_b, stack_a) == -1)
 		return (-1);
 	printf("pb");
+	return (0);
+}
+
+int	reverserotate(t_list **stack)
+{
+	t_list	*tmp;
+	t_list	*end;
+
+	if (ft_lstsize(*stack) < 2)
+		return (-1);
+	tmp = *stack;
+	end = ft_lstlast(tmp);
+	while (tmp)
+	{
+		if (tmp->next->next == NULL)
+		{
+			tmp->next = NULL;
+			break ;
+		}
+		tmp = tmp->next;
+	}
+	end->next = *stack;
+	*stack = end;
+	return (0);
+}
+
+int	rra(t_list **stack_a)
+{
+	if (reverserotate(stack_a) == -1)
+		return (-1);
+	printf("rra");
+	return (0);
+}
+
+int	swap(t_list **stack)
+{
+	t_list	*tmp;
+	t_list	*holder;
+	int		content;
+	int		i;
+
+	if (ft_lstsize(*stack) < 2)
+		return (-1);
+	tmp = *stack;
+	holder = tmp->next;
+	content = tmp->data;
+	i = tmp->index;
+	tmp->data = holder->data;
+	tmp->index = holder->index;
+	holder->data = content;
+	holder->index = i;
+	return (0);
+}
+
+int	sa(t_list **stack_a)
+{
+	if (swap(stack_a) == -1)
+		return (-1);
+	printf("sa");
+	return (0);
 }

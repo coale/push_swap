@@ -6,7 +6,7 @@
 /*   By: aconta <aconta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:06:19 by aconta            #+#    #+#             */
-/*   Updated: 2023/05/04 14:08:23 by aconta           ###   ########.fr       */
+/*   Updated: 2023/05/06 10:43:48 by aconta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,11 @@ void	fill_index(t_list **head)
 	int		i;
 
 	i = 0;
-	tmp = get_min(head);
+	tmp = get_min_for_index(head);
 	while (tmp)
 	{
 		tmp->index = i;
-		tmp = get_min(head);
+		tmp = get_min_for_index(head);
         i++;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: aconta <aconta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:06:31 by aconta            #+#    #+#             */
-/*   Updated: 2023/05/04 14:08:34 by aconta           ###   ########.fr       */
+/*   Updated: 2023/05/06 10:06:21 by aconta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -195,6 +195,19 @@ t_list	*ft_lstlast(t_list *lst)
 		lst = lst->next;
 	}
 	return (lst);
+}
+
+int	ft_lstsize(t_list *lst)
+{
+	int		i;
+
+	i = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
 }
 
 // forse nuovo

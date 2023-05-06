@@ -6,7 +6,7 @@
 /*   By: aconta <aconta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:05:59 by aconta            #+#    #+#             */
-/*   Updated: 2023/05/04 14:15:40 by aconta           ###   ########.fr       */
+/*   Updated: 2023/05/06 10:14:21 by aconta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int main(int argc, char **argv)
     int size_arr; //parametro di convert()
     char **temp;
     int *arr;
-    int *index_arr;
     t_list *head;
     t_list *stack_aPtr;
     t_list	**stack_a;
@@ -31,7 +30,11 @@ int main(int argc, char **argv)
         arr = convert(temp, argc, &size_arr);
         if (final_check(arr, temp, size_arr, argc) == 0)
         {
-            ft_free_str(**temp);
+            stack_a = (t_list **)malloc(sizeof(t_list));
+	        stack_b = (t_list **)malloc(sizeof(t_list));
+            *stack_a = NULL;
+	        *stack_b = NULL;
+            ft_free_str(temp);
             head = fill_list(arr, size_arr);
             stack_aPtr = head;
             fill_index(&stack_aPtr);
