@@ -6,7 +6,7 @@
 /*   By: aconta <aconta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:05:43 by aconta            #+#    #+#             */
-/*   Updated: 2023/05/04 14:05:47 by aconta           ###   ########.fr       */
+/*   Updated: 2023/05/06 11:57:10 by aconta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,12 @@ void	radix_sort(t_list **stack_a, t_list **stack_b)
 			pa(stack_a, stack_b);
 		i++;
 	}
+}
+
+void	sort(t_list **stack_a, t_list **stack_b)
+{
+	if (ft_lstsize(*stack_a) <= 5)
+		simple_sort(stack_a, stack_b);
+	else
+		radix_sort(stack_a, stack_b);
 }

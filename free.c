@@ -6,13 +6,13 @@
 /*   By: aconta <aconta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:05:10 by aconta            #+#    #+#             */
-/*   Updated: 2023/05/04 14:05:14 by aconta           ###   ########.fr       */
+/*   Updated: 2023/05/06 11:12:16 by aconta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_free_str(char **str)
+void	ft_free_strarr(char **str)
 {
 	int	i;
 

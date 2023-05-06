@@ -6,7 +6,7 @@
 /*   By: aconta <aconta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:05:24 by aconta            #+#    #+#             */
-/*   Updated: 2023/05/06 10:44:51 by aconta           ###   ########.fr       */
+/*   Updated: 2023/05/06 15:02:51 by aconta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ra(t_list **stack_a)
 {
 	if (rotate(stack_a) == -1)
 		return (-1);
-	printf("ra");
+	printf("ra\n");
 	return (0);
 }
 
@@ -66,7 +66,7 @@ int	pa(t_list **stack_a, t_list **stack_b)
 {
 	if (push(stack_a, stack_b) == -1)
 		return (-1);
-	printf("pa");
+	printf("pa\n");
 	return (0);
 }
 
@@ -74,7 +74,7 @@ int	pb(t_list **stack_a, t_list **stack_b)
 {
 	if (push(stack_b, stack_a) == -1)
 		return (-1);
-	printf("pb");
+	printf("pb\n");
 	return (0);
 }
 
@@ -105,7 +105,7 @@ int	rra(t_list **stack_a)
 {
 	if (reverserotate(stack_a) == -1)
 		return (-1);
-	printf("rra");
+	printf("rra\n");
 	return (0);
 }
 
@@ -133,6 +133,6 @@ int	sa(t_list **stack_a)
 {
 	if (swap(stack_a) == -1)
 		return (-1);
-	printf("sa");
+	printf("sa\n");
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: aconta <aconta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:05:50 by aconta            #+#    #+#             */
-/*   Updated: 2023/05/04 14:04:59 by aconta           ###   ########.fr       */
+/*   Updated: 2023/05/06 11:11:04 by aconta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int final_check(int *int_arr, char **temp, int size_arr, int argc)
 {
     if (check_zeros(temp, int_arr, argc) != 0 || check_doubles(int_arr, size_arr) != 0)
     {
-        ft_free_str(**temp);
+        ft_free_strarr(temp);
         return (1);
     }
     return (0);

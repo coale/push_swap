@@ -6,7 +6,7 @@
 /*   By: aconta <aconta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:05:59 by aconta            #+#    #+#             */
-/*   Updated: 2023/05/06 10:14:21 by aconta           ###   ########.fr       */
+/*   Updated: 2023/05/06 15:08:27 by aconta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main(int argc, char **argv)
     int size_arr; //parametro di convert()
     char **temp;
     int *arr;
-    t_list *head;
+    //t_list *head;
     t_list *stack_aPtr;
     t_list	**stack_a;
 	t_list	**stack_b;
@@ -34,10 +34,20 @@ int main(int argc, char **argv)
 	        stack_b = (t_list **)malloc(sizeof(t_list));
             *stack_a = NULL;
 	        *stack_b = NULL;
-            ft_free_str(temp);
-            head = fill_list(arr, size_arr);
-            stack_aPtr = head;
+            ft_free_strarr(temp);
+            *stack_a = fill_list(arr, size_arr);
+            stack_aPtr = *stack_a;
             fill_index(&stack_aPtr);
+            if (is_sorted(stack_a))
+	        {
+		        free_stack(stack_a);
+		        free_stack(stack_b);
+		        return (0);
+	        }
+            sort(stack_a, stack_b);
+	        //free_stack(stack_a);
+	        //free_stack(stack_b);
+	        //return (0);
             while (stack_aPtr)
             {
                 printf("Value: %d Index: %d\n", stack_aPtr->data, stack_aPtr->index);
@@ -94,7 +104,7 @@ int	main(int ac, char **av)
         arr = convert(temp, argc, &size_arr);
         if (final_check(arr, temp, size_arr, argc) == 0)
         {
-            ft_free_str(**temp);
+            ft_free_strarr(**temp);
             head = fill_list(arr, size_arr);
             stack_aPtr = head;
             fill_index(&stack_aPtr);

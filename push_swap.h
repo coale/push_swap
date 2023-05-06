@@ -41,7 +41,7 @@ void bubbleSort(t_list** head, int count);
 int	swap(t_list **stack);
 void fill_index(t_list **head);
 int *ft_search_index(int *int_arr, int arr_size, t_list *head);
-void	ft_free_str(char **str);
+void	ft_free_strarr(char **str);
 t_list	*ft_lstlast(t_list *lst);
 int	ft_lstsize(t_list *lst);
 int	rotate(t_list **head);
@@ -53,5 +53,8 @@ int	rra(t_list **stack_a);
 int	get_min(t_list **stack);
 int	sa(t_list **stack_a);
 int	reverserotate(t_list **stack);
+void	free_stack(t_list **head);
+void	sort(t_list **stack_a, t_list **stack_b);
+void	simple_sort(t_list **stack_a, t_list **stack_b);
 
 #endif
