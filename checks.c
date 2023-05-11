@@ -6,7 +6,7 @@
 /*   By: aconta <aconta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:05:34 by aconta            #+#    #+#             */
-/*   Updated: 2023/05/06 16:42:07 by aconta           ###   ########.fr       */
+/*   Updated: 2023/05/07 18:39:00 by aconta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,10 @@ int check_many_args(int argc)
     else if (argc > 2)
         return (0);
     else
+    {
+        ft_putendl_fd("Error", 2);
         return (2);
+    }
 }
 
 char **arr_args(int argc, char **argv)

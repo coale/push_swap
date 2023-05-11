@@ -6,17 +6,18 @@
 /*   By: aconta <aconta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:06:31 by aconta            #+#    #+#             */
-/*   Updated: 2023/05/06 16:24:55 by aconta           ###   ########.fr       */
+/*   Updated: 2023/05/11 09:23:42 by aconta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_atoi(char *str)
+//modificato ft_atoi per limiti int
+long int	ft_atoi(char *str)
 {
 	int	i;
 	int	sign;
-	int	num;
+	long int	num;
 
 	i = 0;
 	num = 0;
@@ -24,7 +25,7 @@ int	ft_atoi(char *str)
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
 		i++;
 	if (str[i] == '-')
-			sign = -1;
+		sign = -1;
 	if (str[i] == '-' || str[i] == '+')
 		i++;
 	while (str[i] >= '0' && str[i] <= '9')

@@ -25,7 +25,7 @@ typedef struct s_list {
   struct s_list *next;
 }  t_list;
 
-int	ft_atoi(char *str);
+long int	ft_atoi(char *str);
 char	**ft_split(char const *str, char c);
 int ft_strlen(char *str);
 int check_many_args(int argc);
@@ -58,5 +58,6 @@ void	free_stack(t_list **head);
 void	sort(t_list **stack_a, t_list **stack_b);
 void	simple_sort(t_list **stack_a, t_list **stack_b);
 void	ft_putendl_fd(char *s, int fd);
+int int_limits(char **temp);
 
 #endif
