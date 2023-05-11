@@ -6,7 +6,7 @@
 /*   By: aconta <aconta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:05:50 by aconta            #+#    #+#             */
-/*   Updated: 2023/05/11 09:35:15 by aconta           ###   ########.fr       */
+/*   Updated: 2023/05/11 14:01:06 by aconta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,13 @@ int int_limits(char **temp)
     return (0);
 }
 
-/*int is_digit_and_sign(char *str)
+int is_digit_and_sign(char *str)
 {
 	int i;
 
 	i = 0;
-    if (((str[i] == '-' || str[i] == '+') && str[i + 1]) || str[i] == '0')
+    if (((str[i] == '-' || str[i] == '+') && str[i + 1]))
         i++;
-    else
-    {
-        ft_putendl_fd("Error", 2);
-        return (1);
-    }
     while (str[i])
     {
         if ((str[i] >= '0' && str[i] <= '9'))
@@ -54,10 +49,10 @@ int int_limits(char **temp)
         }
     }
 	return (0);
-}*/
+}
 
 
-int is_digit_and_sign(char *str)
+/*int is_digit_and_sign(char *str)
 {
 	int i;
 
@@ -75,7 +70,7 @@ int is_digit_and_sign(char *str)
         }
     }
 	return (0);
-}
+}*/
 
 int final_check(int *int_arr, char **temp, int size_arr, int argc)
 {

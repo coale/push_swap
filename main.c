@@ -6,7 +6,7 @@
 /*   By: aconta <aconta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:05:59 by aconta            #+#    #+#             */
-/*   Updated: 2023/05/11 09:19:50 by aconta           ###   ########.fr       */
+/*   Updated: 2023/05/11 14:47:55 by aconta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,11 @@ int main(int argc, char **argv)
 	        free_stack(stack_a);
 	        free_stack(stack_b);
 	        return (0);
+        }
+        else
+        {
+            free(arr);
+            return (1);
         }
     }
     else
