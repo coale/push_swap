@@ -59,5 +59,7 @@ void	sort(t_list **stack_a, t_list **stack_b);
 void	simple_sort(t_list **stack_a, t_list **stack_b);
 void	ft_putendl_fd(char *s, int fd);
 int int_limits(char **temp);
+void    *ft_calloc(size_t nmemb, size_t size);
+void    ft_bzero(void *s, size_t n);
 
 #endif

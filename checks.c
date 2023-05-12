@@ -6,7 +6,7 @@
 /*   By: aconta <aconta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:05:34 by aconta            #+#    #+#             */
-/*   Updated: 2023/05/07 18:39:00 by aconta           ###   ########.fr       */
+/*   Updated: 2023/05/12 14:40:15 by aconta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,14 @@ char **arr_args(int argc, char **argv)
 
     i = 1;
     j = 0;
-    temp = malloc(sizeof (*argv) * argc);
+    temp = ft_calloc(argc, sizeof (char *));
     if (check_many_args(argc) == 1)
         temp = ft_split(argv[1], 32);
     else if (check_many_args(argc) == 0)
     {
         while (i < argc)
         {
-            temp[i - 1] =  malloc(sizeof (int) * (ft_strlen(argv[i]) + 1));
+            temp[i - 1] =  ft_calloc((ft_strlen(argv[i]) + 1), sizeof (int));
             while(argv[i][j])
             {
                 temp[i - 1][j] = argv[i][j];

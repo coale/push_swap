@@ -6,7 +6,7 @@
 /*   By: aconta <aconta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:06:31 by aconta            #+#    #+#             */
-/*   Updated: 2023/05/11 14:07:18 by aconta           ###   ########.fr       */
+/*   Updated: 2023/05/12 14:34:24 by aconta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,6 +137,35 @@ char	**ft_split(char const *str, char c)
 	}
 	return (strs);
 }
+
+void    ft_bzero(void *s, size_t n)
+{
+        size_t  i;
+        char    *ps;
+
+        i = 0;
+        ps = (char *)s;
+        while (i < n)
+        {
+                ps[i] = '\0';
+                i++;
+        }
+}
+
+
+void    *ft_calloc(size_t nmemb, size_t size)
+{
+        void    *arr;
+
+        if (nmemb == 0 || size == 0)
+                return (malloc(0));
+        arr = malloc(nmemb * size);
+        if (!arr)
+                return (0);
+        ft_bzero(arr, size * nmemb);
+        return (arr);
+}
+
 
 int ft_strlen(char *str)
 {
