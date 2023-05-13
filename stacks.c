@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stacks.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aconta <aconta@student.42.fr>              +#+  +:+       +#+        */
+/*   By: alessandra <alessandra@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:06:19 by aconta            #+#    #+#             */
-/*   Updated: 2023/05/06 10:43:48 by aconta           ###   ########.fr       */
+/*   Updated: 2023/05/13 11:48:00 by alessandra       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ t_list *fill_list(int *int_arr, int size_arr)
 
   i = 0;
   head = NULL;
-  head = (t_list *) malloc(sizeof(t_list));
   head = ft_lstnew(int_arr[i]);
   i++;
   while (i < size_arr)
