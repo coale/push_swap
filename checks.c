@@ -6,7 +6,7 @@
 /*   By: alessandra <alessandra@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:05:34 by aconta            #+#    #+#             */
-/*   Updated: 2023/05/13 11:42:38 by alessandra       ###   ########.fr       */
+/*   Updated: 2023/05/13 12:18:55 by alessandra       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ char **arr_args(int argc, char **argv)
 
     i = 1;
     j = 0;
-    temp = ft_calloc(argc, sizeof (char *));
+    if (argc > 2)
+        temp = ft_calloc(argc, sizeof (char *));
     if (check_many_args(argc) == 1)
         temp = ft_split(argv[1], 32);
     else if (check_many_args(argc) == 0)
