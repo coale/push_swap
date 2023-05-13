@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aconta <aconta@student.42.fr>              +#+  +:+       +#+        */
+/*   By: alessandra <alessandra@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:05:59 by aconta            #+#    #+#             */
-/*   Updated: 2023/05/12 15:04:12 by aconta           ###   ########.fr       */
+/*   Updated: 2023/05/13 11:41:23 by alessandra       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main(int argc, char **argv)
     if (argc > 1)
     {
         temp = arr_args(argc, argv);
-        arr = convert(temp, argc, &size_arr);
+        arr = convert(temp, argc, argv, &size_arr);
         if (final_check(arr, temp, size_arr, argc) == 0)
         {
             stack_a = (t_list **)malloc(sizeof(t_list));

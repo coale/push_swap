@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checks.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aconta <aconta@student.42.fr>              +#+  +:+       +#+        */
+/*   By: alessandra <alessandra@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:05:34 by aconta            #+#    #+#             */
-/*   Updated: 2023/05/12 14:40:15 by aconta           ###   ########.fr       */
+/*   Updated: 2023/05/13 11:42:38 by alessandra       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,13 +54,16 @@ char **arr_args(int argc, char **argv)
     return (temp);
 }
 
-int *convert(char **temp, int argc, int *size_arr)
+int *convert(char **temp, int argc, char **argv, int *size_arr)
 {
     int i;
     int *int_arr;
 
     i = 0;
-    int_arr = malloc(sizeof (int) * argc); //free()
+    if (argc == 2)
+        int_arr = malloc(sizeof (int) * (ft_strlen(argv[1])));
+    else
+        int_arr = malloc(sizeof (int) * (argc + 1)); //free()
     while (temp[i])
     {
         int_arr[i] = ft_atoi(temp[i]);
