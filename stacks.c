@@ -6,49 +6,49 @@
 /*   By: alessandra <alessandra@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:06:19 by aconta            #+#    #+#             */
-/*   Updated: 2023/05/13 12:19:50 by alessandra       ###   ########.fr       */
+/*   Updated: 2023/05/15 11:24:32 by aconta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list *fill_list(int *int_arr, int size_arr)
+t_list	*fill_list(int *int_arr, int size_arr)
 {
-  t_list *head;
-  t_list *temp;
-  int i;
+	int		i;
+	t_list	*head;
+	t_list	*temp;
 
-  i = 0;
-  head = NULL;
-  head = ft_lstnew(int_arr[i]);
-  i++;
-  while (i < size_arr)
-  {
-    temp = ft_lstnew(int_arr[i]);
-    ft_lstadd_back(&head, temp);
-    i++;
-  }
-  return (head);
+	i = 0;
+	head = NULL;
+	head = ft_lstnew(int_arr[i]);
+	i++;
+	while (i < size_arr)
+	{
+		temp = ft_lstnew(int_arr[i]);
+		ft_lstadd_back(&head, temp);
+		i++;
+	}
+	return (head);
 }
 
 t_list	*get_min_for_index(t_list **head)
 {
 	t_list	*tmp;
 	t_list	*min;
-    int		flag;
+	int		flag;
 
 	tmp = *head;
 	min = NULL;
-    flag = 0;
+	flag = 0;
 	if (!tmp)
 		return (NULL);
 	while (tmp)
 	{
 		if ((tmp->index == -1) && (!flag || tmp->data < min->data))
-        {
-            flag = 1;
+		{
+			flag = 1;
 			min = tmp;
-        }
+		}
 		tmp = tmp->next;
 	}
 	return (min);
@@ -65,7 +65,7 @@ void	fill_index(t_list **head)
 	{
 		tmp->index = i;
 		tmp = get_min_for_index(head);
-        i++;
+		i++;
 	}
 }
 

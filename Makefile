@@ -1,6 +1,6 @@
 NAME = push_swap
 
-SRC = checks.c checks1.c free.c main.c moves.c radix.c stacks.c three_four_five.c utils_libft.c
+SRC = checks.c checks1.c checks2.c free.c main.c moves.c radix.c stacks.c three_four_five.c utils_libft.c
 
 OBJ_S = $(SRC:.c=.o)
 
@@ -20,3 +20,7 @@ fclean: clean
 	rm -rf $(NAME)
 	
 .PHONY: all re clean fclean
+
+#./push_swap + 3 1 0
+#ARG=" "; valgrind ./push_swap $ARG
+#.	.
