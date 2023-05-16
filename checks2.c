@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checks2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aconta <aconta@student.42.fr>              +#+  +:+       +#+        */
+/*   By: alessandra <alessandra@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 11:03:14 by aconta            #+#    #+#             */
-/*   Updated: 2023/05/15 11:57:29 by aconta           ###   ########.fr       */
+/*   Updated: 2023/05/16 16:39:33 by alessandra       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,3 +35,5 @@ int	check_doubles(int *int_arr, int size_arr)
 	}
 	return (0);
 }
+
+

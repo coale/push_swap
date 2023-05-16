@@ -6,7 +6,7 @@
 /*   By: alessandra <alessandra@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:06:31 by aconta            #+#    #+#             */
-/*   Updated: 2023/05/13 12:19:58 by alessandra       ###   ########.fr       */
+/*   Updated: 2023/05/16 16:26:39 by alessandra       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -262,4 +262,28 @@ t_list *swap_nodes(t_list *ptr1, t_list *ptr2)
     ptr2->next = ptr1;
     ptr1->next = tmp;
     return ptr2;
+}
+
+int	ft_strncmp(char *s1, char *s2, size_t n)
+{
+	size_t			i;
+	unsigned char	*p1;
+	unsigned char	*p2;
+
+	i = 0;
+	p1 = (unsigned char *)s1;
+	p2 = (unsigned char *)s2;
+	while (i < n && (p1[i] != '\0' || p2[i] != '\0'))
+	{
+		if (p1[i] < p2[i])
+		{
+			return (-1);
+		}
+		else if (p1[i] > p2[i])
+		{
+			return (1);
+		}
+		i++;
+	}
+	return (0);
 }

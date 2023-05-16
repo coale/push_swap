@@ -62,6 +62,7 @@ int			int_limits(char **temp);
 void		*ft_calloc(size_t nmemb, size_t size);
 void		ft_bzero(void *s, size_t n);
 int	check_doubles(int *int_arr, int size_arr);
+int	ft_strncmp(char *s1, char *s2, size_t n);
 
 #endif
 
