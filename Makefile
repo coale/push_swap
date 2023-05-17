@@ -4,10 +4,13 @@ SRC = checks.c checks1.c checks2.c free.c main.c moves.c radix.c stacks.c three_
 
 OBJ_S = $(SRC:.c=.o)
 
+LIBFT = libft/libft.a
+
 FLAG = -Wall -Wextra -Werror -g
 
 $(NAME): $(OBJ_S)
-	@cc $(FLAG) $(SRC) -o $(NAME)
+	@make -C libft
+	@cc $(FLAG) $(SRC) $(LIBFT) -o $(NAME)
 
 all: $(NAME)
 
@@ -15,8 +18,10 @@ re: fclean all
 
 clean: 
 	rm -f ${OBJ_S}
+	make clean -C libft
 
 fclean: clean
+	make fclean -C libft
 	rm -rf $(NAME)
 	
 .PHONY: all re clean fclean
