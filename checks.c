@@ -6,7 +6,7 @@
 /*   By: alessandra <alessandra@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:05:34 by aconta            #+#    #+#             */
-/*   Updated: 2023/05/16 18:34:09 by alessandra       ###   ########.fr       */
+/*   Updated: 2023/05/17 15:12:24 by alessandra       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,22 +28,18 @@ int	check_many_args(int argc)
 char	**conditional_create(int argc, char **argv)
 {
 	char	**temp;
-	int i;
 
-	i = 0;
 	if (argc > 2)
 		temp = ft_calloc(argc, sizeof (char *));
 	if (check_many_args(argc) == 1)
 	{
-		temp = ft_split(argv[1], 32);
-		while (temp[i])
+		if (is_digit_and_sign(argv[1]) == 1)
+			temp = ft_split(argv[1], 32);
+		else
 		{
-			if (is_digit_and_sign(temp[i]) == 1)
-			{
-				ft_putendl_fd("Error", 2);
-				exit(1);
-			}
-			i++;
+			ft_free_strarr(temp);
+			ft_putendl_fd("Error", 2);
+			exit(1);
 		}
 	}
 	return (temp);

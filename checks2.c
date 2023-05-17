@@ -6,7 +6,7 @@
 /*   By: alessandra <alessandra@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 11:03:14 by aconta            #+#    #+#             */
-/*   Updated: 2023/05/16 16:39:33 by alessandra       ###   ########.fr       */
+/*   Updated: 2023/05/17 14:51:07 by alessandra       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,17 @@ int	check_doubles(int *int_arr, int size_arr)
 	return (0);
 }
 
+int final_leak(char **temp)
+{
+	int i;
+
+	i = 0;
+	while (temp[i])
+	{
+		if (is_digit_and_sign(temp[i]) == 1)
+			return (1);
+		i++;
+	}
+	return (0);
+}
 

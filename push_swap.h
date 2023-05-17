@@ -63,9 +63,8 @@ void		*ft_calloc(size_t nmemb, size_t size);
 void		ft_bzero(void *s, size_t n);
 int	check_doubles(int *int_arr, int size_arr);
 int	ft_strncmp(char *s1, char *s2, size_t n);
+int final_leak(char **temp);
 
 #endif
 
-// segfault con arg " "
-// doppio Error con un segno da solo
 // tab
