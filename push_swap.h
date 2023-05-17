@@ -18,7 +18,12 @@
 # include <stdlib.h>
 # include <stddef.h>
 # include <unistd.h>
-# include "../libft/libft.h"
+
+typedef struct	s_list {
+ 	int	data;
+ 	int	index;
+ 	struct	s_list *next;
+}  t_list;
 
 int 		check_many_args(int argc);
 char 		**arr_args(int argc, char **argv);
@@ -46,6 +51,19 @@ void		simple_sort(t_list **stack_a, t_list **stack_b);
 int			int_limits(char **temp);
 int	check_doubles(int *int_arr, int size_arr);
 int final_leak(char **temp);
+//libft---------
+long int	ft_atoi(char *str);
+void	ft_bzero(void *s, size_t n);
+void	*ft_calloc(size_t nmemb, size_t size);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+t_list	*ft_lstlast(t_list *lst);
+t_list	*ft_lstnew(int content);
+int	ft_lstsize(t_list *lst);
+void	ft_putendl_fd(char *s, int fd);
+char	**ft_split(char const *str, char c);
+size_t	ft_strlen(const char *str);
+int	ft_strncmp(char *s1, char *s2, size_t n);
 
 #endif
 
