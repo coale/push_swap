@@ -6,7 +6,7 @@
 /*   By: aconta <aconta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 11:46:06 by aconta            #+#    #+#             */
-/*   Updated: 2023/05/18 13:43:20 by aconta           ###   ########.fr       */
+/*   Updated: 2023/05/18 13:57:59 by aconta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,3 +102,7 @@ int	main(int argc, char **argv)
 	return (0);
     
 }
+
+
+// leak su singolo argomento con valore numerico SENZA VIRGOLETTE
+// Error sbagliato su input corretto CON VIRGOLETTE (sia in ordine che in disordine)
