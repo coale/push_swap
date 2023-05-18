@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alessandra <alessandra@student.42.fr>      +#+  +:+       +#+        */
+/*   By: aconta <aconta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:05:59 by aconta            #+#    #+#             */
-/*   Updated: 2023/05/17 15:01:22 by alessandra       ###   ########.fr       */
+/*   Updated: 2023/05/18 10:55:25 by aconta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,10 @@ void starter(int argc, char **argv, t_list **stack_a, t_list **stack_b)
 	char	**temp;
 	int		*arr;
 
-	if (argc > 1)
-	{
-		*stack_a = NULL;
-		*stack_b = NULL;
-		temp = arr_args(argc, argv);
-		arr = convert(temp, argc, argv, &size_arr);
-	}
+	*stack_a = NULL;
+	*stack_b = NULL;
+	temp = arr_args(argc, argv);
+	arr = convert(temp, argc, argv, &size_arr);
 	if (final_check(arr, temp, size_arr, argc) == 0)
 	{
 		ft_free_strarr(temp);

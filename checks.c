@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checks.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alessandra <alessandra@student.42.fr>      +#+  +:+       +#+        */
+/*   By: aconta <aconta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:05:34 by aconta            #+#    #+#             */
-/*   Updated: 2023/05/17 15:12:24 by alessandra       ###   ########.fr       */
+/*   Updated: 2023/05/18 13:23:13 by aconta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,15 @@ int	check_many_args(int argc)
 	}
 }
 
-char	**conditional_create(int argc, char **argv)
+char	**conditional_create(char **argv, char **temp)
 {
-	char	**temp;
-
-	if (argc > 2)
-		temp = ft_calloc(argc, sizeof (char *));
-	if (check_many_args(argc) == 1)
+	if (is_digit_and_sign(argv[1]) == 0)
+		temp = ft_split(argv[1], 32);
+	else
 	{
-		if (is_digit_and_sign(argv[1]) == 1)
-			temp = ft_split(argv[1], 32);
-		else
-		{
-			ft_free_strarr(temp);
-			ft_putendl_fd("Error", 2);
-			exit(1);
-		}
+		ft_free_strarr(temp);
+		ft_putendl_fd("Error", 2);
+		exit(1);
 	}
 	return (temp);
 }
@@ -53,8 +46,9 @@ char	**arr_args(int argc, char **argv)
 
 	i = 1;
 	j = 0;
-	if (argc == 2 || argc > 2)
-		temp = conditional_create(argc, argv);
+	temp = ft_calloc(argc, sizeof (char *));
+	if (argc == 2)
+		temp = conditional_create(argv, temp);
 	if (check_many_args(argc) == 0)
 	{
 		while (i < argc)
