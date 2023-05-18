@@ -51,6 +51,7 @@ void		simple_sort(t_list **stack_a, t_list **stack_b);
 int			int_limits(char **temp);
 int	check_doubles(int *int_arr, int size_arr);
 int final_leak(char **temp);
+char	**arr_args_quotes(char **argv);
 //libft---------
 long int	ft_atoi(char *str);
 void	ft_bzero(void *s, size_t n);

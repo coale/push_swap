@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checks.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aconta <aconta@student.42.fr>              +#+  +:+       +#+        */
+/*   By: alessandra <alessandra@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:05:34 by aconta            #+#    #+#             */
-/*   Updated: 2023/05/18 13:23:13 by aconta           ###   ########.fr       */
+/*   Updated: 2023/05/18 18:55:06 by alessandra       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ int	check_many_args(int argc)
 	}
 }
 
-char	**conditional_create(char **argv, char **temp)
+char	**arr_args_quotes(char **argv)
 {
+	char	**temp;
 	if (is_digit_and_sign(argv[1]) == 0)
 		temp = ft_split(argv[1], 32);
 	else
 	{
-		ft_free_strarr(temp);
 		ft_putendl_fd("Error", 2);
 		exit(1);
 	}
@@ -47,22 +47,17 @@ char	**arr_args(int argc, char **argv)
 	i = 1;
 	j = 0;
 	temp = ft_calloc(argc, sizeof (char *));
-	if (argc == 2)
-		temp = conditional_create(argv, temp);
-	if (check_many_args(argc) == 0)
+	while (i < argc)
 	{
-		while (i < argc)
+		temp[i - 1] = ft_calloc((ft_strlen(argv[i]) + 1), sizeof (int));
+		while (argv[i][j])
 		{
-			temp[i - 1] = ft_calloc((ft_strlen(argv[i]) + 1), sizeof (int));
-			while (argv[i][j])
-			{
-				temp[i - 1][j] = argv[i][j];
-				j++;
-			}
-			temp[i - 1][j] = '\0';
-			j = 0;
-			i++;
+			temp[i - 1][j] = argv[i][j];
+			j++;
 		}
+		temp[i - 1][j] = '\0';
+		j = 0;
+		i++;
 	}
 	return (temp);
 }

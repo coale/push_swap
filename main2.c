@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main2.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aconta <aconta@student.42.fr>              +#+  +:+       +#+        */
+/*   By: alessandra <alessandra@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 11:46:06 by aconta            #+#    #+#             */
-/*   Updated: 2023/05/18 13:57:59 by aconta           ###   ########.fr       */
+/*   Updated: 2023/05/18 19:05:37 by alessandra       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void starter1(int argc, char **argv, t_list **stack_a, t_list **stack_b)
     }
     else
     {
-        temp = arr_args(argc, argv);
+        temp = arr_args_quotes(argv);
         arr = convert(temp, argc, argv, &size_arr);
         if (final_check(arr, temp, size_arr, argc) == 0)
 	    {
