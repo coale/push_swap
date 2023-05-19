@@ -6,7 +6,7 @@
 /*   By: alessandra <alessandra@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:05:50 by aconta            #+#    #+#             */
-/*   Updated: 2023/05/18 20:25:03 by alessandra       ###   ########.fr       */
+/*   Updated: 2023/05/19 15:52:33 by alessandra       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,24 @@ int	is_digit_and_sign(char *str)
 	return (0);
 }
 
+int	is_digit_and_sign_1arg(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (((str[i] == '-' || str[i] == '+') \
+					&& (str[i + 1] >= '0' && str[i] <= '9')))
+			i++;
+		else if ((str[i] >= '0' && str[i] <= '9') || str[i] == 32)
+			i++;
+		else
+			return (1);
+	}
+	return (0);
+}
+
 int	final_check(int *int_arr, char **temp, int size_arr, int argc)
 {
 	if (check_zeros(temp, int_arr, argc) != 0 \
@@ -55,5 +73,13 @@ int	final_check(int *int_arr, char **temp, int size_arr, int argc)
 		ft_free_strarr(temp);
 		return (1);
 	}
+	return (0);
+}
+
+int	final_check_1arg(int *int_arr, char **temp, int size_arr, int argc)
+{
+	if (check_zeros(temp, int_arr, argc) != 0 \
+			|| check_doubles(int_arr, size_arr) != 0 || int_limits(temp) != 0)
+		return (1);
 	return (0);
 }

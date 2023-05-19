@@ -6,7 +6,7 @@
 /*   By: alessandra <alessandra@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:05:34 by aconta            #+#    #+#             */
-/*   Updated: 2023/05/18 18:55:06 by alessandra       ###   ########.fr       */
+/*   Updated: 2023/05/19 15:55:34 by alessandra       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ int	check_many_args(int argc)
 char	**arr_args_quotes(char **argv)
 {
 	char	**temp;
-	if (is_digit_and_sign(argv[1]) == 0)
+
+	if (is_digit_and_sign_1arg(argv[1]) == 0)
 		temp = ft_split(argv[1], 32);
 	else
 	{

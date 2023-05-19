@@ -36,9 +36,9 @@ int	check_doubles(int *int_arr, int size_arr)
 	return (0);
 }
 
-int final_leak(char **temp)
+int	final_leak(char **temp)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (temp[i])
@@ -49,4 +49,3 @@ int final_leak(char **temp)
 	}
 	return (0);
 }
-
